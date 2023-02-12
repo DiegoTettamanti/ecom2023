@@ -15,7 +15,7 @@ app.use(express.json());
 
 //Habilitar Pug
 app.set('view engine', 'pug');
-app.set('views', __dirname + './views');
+app.set('views',  './views');
 
 //Carpeta Public
 app.use(express.static('public'));
