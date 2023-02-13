@@ -13,7 +13,7 @@ const formularioRegistro = (req, res) => {
 
 const olvidePassword = (req, res) => {
     res.render('auth/olvidepassword', {
-        pagina: 'Crear cuenta',
+        pagina: 'Recupera tu contraseña',
     })
 }
 
