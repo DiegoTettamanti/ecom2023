@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 
-const clientesSchema = new Schema({
+const cartsSchema = new Schema({
     nombre: {
         type: stringify,
         trim: true  
@@ -12,20 +12,18 @@ const clientesSchema = new Schema({
         type: String,
         trim: true
     },
-    empresa: {
-        type: String,
-        trim: true
-    },
+   
     email: {
         type: String,
         unique: true,
         lowercase: true,
         trim: true
     },    
-    telefono: {
+    id: {
         type: String,
-        trim: true
+        trim: true,
+        unique: true,
     }
 })
 
-module.exports = mongoose.model('Clientes', clientesSchema);
+module.exports = mongoose.model('Cart', cartsSchema);

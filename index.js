@@ -4,6 +4,7 @@ import usuarioRoutes from './routes/usuarioRoutes.js';
 import { Server } from 'socket.io';
 //import uploader from './uploader.js';
 import mongoose from 'mongoose';
+import cartController from './controlers/cartController.js';
 
 //Conectar Mongo
 mongoose.Promise  = global.Promise;
