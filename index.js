@@ -3,7 +3,14 @@ import usuarioRoutes from './routes/usuarioRoutes.js';
 //import productsRoutes from './routes/productsRoutes.js';
 import { Server } from 'socket.io';
 //import uploader from './uploader.js';
+import mongoose from 'mongoose';
 
+//Conectar Mongo
+mongoose.Promise  = global.Promise;
+mongoose.connect('mongodb://localhost/restapis', {
+    useNewUrlParser: true
+});
+ 
 
 //Crear la App
 const app = express();
@@ -12,7 +19,7 @@ app.use(express.json());
 
 
 
-
+ 
 //Habilitar Pug
 app.set('view engine', 'pug');
 app.set('views',  './views');
