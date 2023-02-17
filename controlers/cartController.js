@@ -7,9 +7,6 @@ const cartid = (req, res) => {
 }
 
 //Agrega un nuevo Cart
-exports.nuevoCart = async (req, res) => {
-    console.log(req.body)
-}
 
 
 export default Cart

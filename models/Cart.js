@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const cartsSchema = new Schema({
     nombre: {
-        type: stringify,
+        type: String,
         trim: true  
     },
     apellido: {
@@ -26,4 +26,4 @@ const cartsSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Cart', cartsSchema);
+export default ('Cart', cartsSchema);

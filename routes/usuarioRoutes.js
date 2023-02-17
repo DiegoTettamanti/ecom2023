@@ -10,4 +10,6 @@ router.get('/registro', formularioRegistro );
 
 router.get('/olvidepassword', olvidePassword ); 
 
+
+
 export default router
