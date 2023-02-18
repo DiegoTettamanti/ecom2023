@@ -26,4 +26,4 @@ const cartsSchema = new Schema({
     }
 })
 
-export default ('Cart', cartsSchema);
+export default ('cartsSchema', cartsSchema);

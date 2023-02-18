@@ -1,7 +1,7 @@
 import express from 'express'
 import usuarioRoutes from './routes/usuarioRoutes.js';  
 //import productsRoutes from './routes/productsRoutes.js';
-import { Server } from 'socket.io';
+//import { Server } from 'socket.io';
 //import uploader from './uploader.js';
 import mongoose from 'mongoose';
 import cartController from './controlers/cartController.js';

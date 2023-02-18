@@ -1,9 +1,12 @@
 import { connect } from 'connect';
+import mongoose from 'mongoose';
 
 const { connect } = require('mongoose')
 
-const url = 'mongodb+srv://federicoaosandon:Federico1@cluster0.an130di.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net/'
 // const url_local = 'mongodb//localhost:27017/nombreDB'
+
+mongoose.set("strictQuery", false);
 
 const dbConnection = async () => {
     return await connect(url, err => {
@@ -16,3 +19,7 @@ const dbConnection = async () => {
 }
 
 module.exports = { dbConnection }
+
+
+
+

@@ -16,7 +16,7 @@ router.post('/api/carts', async (req, res) =>{
 })
 //Get localhost/api/carts/:cid 
 router.get('/:cid', async (req, res) =>{
-    const { Cart } = req.params
+    const { cartid } = req.params
 
     res.status(200).json({
         msg: 'carrito personalizado',

@@ -1,4 +1,4 @@
-import Cart from '../models/Cart.js';
+
 
 const cartid = (req, res) => {
     res.render('auth/cid', {
@@ -9,4 +9,4 @@ const cartid = (req, res) => {
 //Agrega un nuevo Cart
 
 
-export default Cart
+export default cartid
