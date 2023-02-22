@@ -1,22 +1,14 @@
-import { connect } from 'connect';
-import mongoose from 'mongoose';
 
-const { connect } = require('mongoose')
 
-const url = 'mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net/'
-// const url_local = 'mongodb//localhost:27017/nombreDB'
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("ecommerce").collection("users");
+  // perform actions on the collection object
+  client.close();
+});
 
-mongoose.set("strictQuery", false);
-
-const dbConnection = async () => {
-    return await connect(url, err => {
-        if (err) {
-            console.log('No se puede conectar mongodb: ', err)
-            process.exit()
-        }
-        console.log('DB conectada ')
-    })
-}
 
 module.exports = { dbConnection }
 

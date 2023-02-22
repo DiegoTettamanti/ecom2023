@@ -4,19 +4,29 @@ import usuarioRoutes from './routes/usuarioRoutes.js';
 //import { Server } from 'socket.io';
 //import uploader from './uploader.js';
 import mongoose from 'mongoose';
-import cartController from './controlers/cartController.js';
+import cartid from './controlers/cartController.js';
+import bodyParser from 'body-parser';
 
-//Conectar Mongo
-mongoose.Promise  = global.Promise;
-mongoose.connect('mongodb://localhost/restapis', {
-    useNewUrlParser: true
-});
- 
 
 //Crear la App
 const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());    
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+
+
+
+
+
+//Conectar Mongo
+mongoose.Promise  = global.Promise;
+mongoose.connect('mongodb://localhost/restapis', {
+    useNewUrlParser: true
+}); 
+ 
+
 
 
 
