@@ -16,7 +16,9 @@
     "express-pug": "^1.0.0",
     "fs": "^0.0.1-security",
     "mongoose": "^6.9.2",
+    "multer": "^1.4.5-lts.1",
     "pug": "^3.0.2",
+    "shortid": "^2.2.16",
     "socket.io": "^4.6.0"
   },
   "devDependencies": {
