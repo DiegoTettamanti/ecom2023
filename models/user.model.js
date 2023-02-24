@@ -1,6 +1,6 @@
-import { Schema } from 'mongoose'
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose'
 
+const collection = 'usuarios';
 
 const Userschema = new Schema({
     nombre: {
@@ -23,7 +23,10 @@ const Userschema = new Schema({
     }
     })
 
-module.exports = mongoose.model('Usuario',Userschema)
 
 
-export default {Userschema}
+export  {Userschema, collection}
+
+
+    module.exports = model(collection, Userschema);
+

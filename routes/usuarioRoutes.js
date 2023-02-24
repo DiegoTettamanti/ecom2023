@@ -1,8 +1,7 @@
 import express from 'express';
 import { formularioLogin, formularioRegistro, olvidePassword } from '../controlers/usuariocontroler.js';
-import usuarioControler from '../controlers/usuariocontroler.js';
+import usuarioControler from '../controlers/usuariocontroler'
 
-import { Router } from 'express';
 
 
 const router = express.Router();

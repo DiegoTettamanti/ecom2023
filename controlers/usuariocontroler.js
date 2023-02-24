@@ -1,9 +1,9 @@
-import Userschema from '../models/User.model.js';
+import Userschema from './models/User.model.js';
 
 
 // Agrega un nuevo usuario
 exports.nuevoUsuario = async (req, res, next) => {
-    const usuario = new Usuarios(req.body);
+    const usuario = new usuario(req.body);
 try {
     //almacenar registro
     await usuario.save;
@@ -19,7 +19,7 @@ try {
 const formularioLogin = (req, res) => {
     res.render('auth/login', {
         autenticado: false  
-    })
+    }) 
 }
 
 const formularioRegistro = (req, res) => {
@@ -37,7 +37,6 @@ const olvidePassword = (req, res) => {
 export default {
     formularioLogin,
     formularioRegistro,
-    olvidePassword,
-
+    olvidePassword
     
 }

@@ -1,10 +1,10 @@
 import express from 'express';
-import { productManager } from '..productManager.js';
+import { productManager } from '../productManager';
 
 const router = express.Router();
 
 
-router.get('/:pid', productManager );
+router.use('/:pid', productManager );
 
 //router.get('/registro', formularioRegistro );
 
