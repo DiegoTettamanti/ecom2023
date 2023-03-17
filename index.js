@@ -1,6 +1,8 @@
 import express from 'express'
 import usuarioRoutes from './routes/usuarioRoutes.js';  
-
+import mongoose from 'mongoose';
+import app from 'express-app';
+import usuariocontroler from './controlers/usuariocontroler.js';
 
 
 
@@ -12,14 +14,18 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json());    
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
-
-
+app.use('/static', express.static(__dirname +'/public'))
 
 
 
 //Conectar Mongo
 initConnections();
 
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/ecommerce', {
+    useNewUrlParser: true
+
+})
 
 
 

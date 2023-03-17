@@ -1,5 +1,5 @@
-import Userschema from './models/User.model.js';
-
+import mongoose from 'mongoose';
+import Users from '../models/Users'
 
 // Agrega un nuevo usuario
 exports.nuevoUsuario = async (req, res, next) => {
@@ -16,10 +16,10 @@ try {
 }
 
 
-const formularioLogin = (req, res) => {
+function formularioLogin(req, res) {
     res.render('auth/login', {
-        autenticado: false  
-    }) 
+        autenticado: false
+    });
 }
 
 const formularioRegistro = (req, res) => {
@@ -37,6 +37,7 @@ const olvidePassword = (req, res) => {
 export default {
     formularioLogin,
     formularioRegistro,
-    olvidePassword
+    olvidePassword,
+    usuario
     
 }

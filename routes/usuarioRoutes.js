@@ -1,6 +1,8 @@
 import express from 'express';
 import { formularioLogin, formularioRegistro, olvidePassword } from '../controlers/usuariocontroler.js';
-import usuarioControler from '../controlers/usuariocontroler'
+import usuariocontroler from '../controlers/usuariocontroler'
+
+
 
 
 
@@ -16,19 +18,19 @@ router.get('/olvidepassword', olvidePassword );
 
                 //CRUD **   *   * * * * * * * * * * * * * * * *
     //Agrega nuevos usuarios vía POST
-router.post('/usuarios', usuarioControler.nuevoUsuario); 
+router.post('/usuarios', usuariocontroler.nuevoUsuario); 
 
     //obtener todos los usuarios
-router.get('/usuarios', usuarioControler.mostrarUsuarios);
+router.get('/usuarios', usuariocontroler.mostrarUsuarios);
 
     //Muestra un usuario especifico (ID)
-router.get('/usuarios/idUsuario', usuarioControler.mostrarUsuario);
+router.get('/usuarios/idUsuario', usuariocontroler.mostrarUsuario);
 
     // Actualizar Usuario
-router.put('/usuarios/:idUsuario', usuarioControler.actualizarUsuario);
+router.put('/usuarios/:idUsuario', usuariocontroler.actualizarUsuario);
 
     //Eliminar Cliente
-router.delete('/usuarios/:idUsuario', usuarioControler.eiliminarUsuario);
+router.delete('/usuarios/:idUsuario', usuariocontroler.eiliminarUsuario);
 
 
 
