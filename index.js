@@ -1,15 +1,9 @@
 import express from 'express'
 import usuarioRoutes from './routes/usuarioRoutes.js';  
 import mongoose from 'mongoose';
-import app from 'express-app';
-import usuariocontroler from './controlers/usuariocontroler.js';
-
-
-
-
 
 //Crear la App
-const app = express();
+//const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());    
 app.use(express.urlencoded({ extended: true }))

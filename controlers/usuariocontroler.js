@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Users from '../models/Users'
+import Users from '../models/Users.js'
 
 // Agrega un nuevo usuario
 exports.nuevoUsuario = async (req, res, next) => {
