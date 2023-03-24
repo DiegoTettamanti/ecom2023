@@ -1,9 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { productsRoutes } from '../routes/productsRoutes';
-import router from '../routes/usuarioRoutes';
-const mongoose = require ( 'mongoose' )
+const mongoose = require ('mongoose')
 
-const collection = 'usuarios';
+const collection = 'users';
 
 const Userschema = new Schema({
     nombre: {
@@ -31,5 +29,5 @@ const Userschema = new Schema({
 
 
 
-    module.exports = model('Users', Userschema);
+    module.exports = model('users', Userschema);
 

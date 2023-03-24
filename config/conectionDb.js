@@ -3,7 +3,7 @@
 import { mongoose} from 'mongodb';
 
 const initConnections = async () => {
-  const url = "mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net/?retryWrites=true&w=majority";
+  const url = "mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net";
   try {
     console.log("Conectado a MongoDB");
     return await mongoose.connect(url)
