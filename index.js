@@ -1,4 +1,7 @@
 import express from 'express'
+import csrf from 'csurf'
+import cookieParser from 'cookie-parser'
+
 import usuarioRoutes from './routes/usuarioRoutes.js';  
 import mongoose from 'mongoose';
 
@@ -10,6 +13,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use('/static', express.static(__dirname +'/public'))
 
+
+// Habilitar Cookie Parser
+app.use( cookieParser() )
+
+// Habilitar CSRF
+app.use( csrf({cookie: true}) )
 
 
 //Conectar Mongo

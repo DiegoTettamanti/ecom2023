@@ -1,5 +1,5 @@
 import express from 'express';
-import { formularioLogin, formularioRegistro, olvidePassword } from '../controlers/usuariocontroler.js';
+import { formularioLogin, formularioRegistro, olvidePassword, cerrarSesion, comprobarToken, nuevoPassword, eiliminarUsuario } from '../controlers/usuariocontroler.js';
 import usuariocontroler from '../controlers/usuariocontroler.js'
 
 
@@ -30,7 +30,15 @@ router.get('/usuarios/idUsuario', usuariocontroler.mostrarUsuario);
 router.put('/usuarios/:idUsuario', usuariocontroler.actualizarUsuario);
 
     //Eliminar Cliente
-router.delete('/usuarios/:idUsuario', usuariocontroler.eiliminarUsuario);
+router.delete('/usuarios/:idUsuario', usuariocontroler.eliminarUsuario);
+
+// Cerrar sesión
+router.post('/cerrar-sesion', cerrarSesion)
+
+// Almacena el nuevo password
+router.get('/olvide-password/:token', comprobarToken);
+router.post('/olvide-password/:token', nuevoPassword);
+
 
 
 

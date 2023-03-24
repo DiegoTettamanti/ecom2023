@@ -38,6 +38,12 @@ export default {
     formularioLogin,
     formularioRegistro,
     olvidePassword,
-    usuario
+    nuevoUsuario,
+    mostrarUsuario,
+    mostrarUsuarios,
+    eliminarUsuario,
+    cerrarSesion,
+    comprobarToken,
+    nuevoPassword
     
 }
