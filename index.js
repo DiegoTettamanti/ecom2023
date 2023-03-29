@@ -43,7 +43,7 @@ app.use(express.static('public'));
 
 //Routing
 app.use('/auth', usuarioRoutes)
-//app.get('/:pid', productsRoutes)
+app.get('/:pid', productsRoutes)
 
 
 
