@@ -5,7 +5,7 @@ import { check, validationResult } from 'express-validator'
 import bcrypt from 'bcrypt'
 import Usuario from '../models/Users.js'
 import { generarJWT, generarId } from '../helpers/tokens.js'
-import { emailRegistro, emailOlvidePassword } from '../helpers/emails.js'
+
 
 const formularioLogin = (req, res) => {
     res.render('auth/login', {
@@ -147,7 +147,7 @@ const registrar = async (req, res) => {
     // Mostrar mensaje de confirmación
     res.render('templates/mensaje', {
         pagina: 'Cuenta Creada Correctamente',
-        mensaje: 'Hemos Enviado un Email de Confirmación, presiona en el enlace'
+        
     })
 }
 

@@ -1,14 +1,10 @@
 import express from 'express';
-import { formularioLogin, formularioRegistro, olvidePassword, cerrarSesion, comprobarToken, nuevoPassword, eiliminarUsuario } from '../controlers/usuarioController.js';
-import usuariocontroler from '../controlers/usuarioController.js'
-
-
-
+import { formularioLogin, formularioRegistro, cerrarSesion, comprobarToken, nuevoPassword } from '../controlers/usuarioController.js';
 
 
 const router = express.Router();
 
-module.exports = function(){
+export function login(req, res, next) {
 
 router.get('/login', formularioLogin );
 
@@ -45,4 +41,4 @@ router.post('/olvide-password/:token', nuevoPassword);
     return router;
 }
 
-export default router
+export default { router}

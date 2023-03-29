@@ -2,16 +2,16 @@ import express from 'express'
 import csrf from 'csurf'
 import cookieParser from 'cookie-parser'
 
-import usuarioRoutes from './routes/usuarioRoutes.js';  
+import usuarioRoutes from '../src/routes/usuarioRoutes.js';  
 import mongoose from 'mongoose';
 
 //Crear la App
-//const app = express();
+const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());    
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
-app.use('/static', express.static(__dirname +'/public'))
+//app.use('/static', express.static(__dirname +'/public'))
 
 
 // Habilitar Cookie Parser
@@ -22,7 +22,7 @@ app.use( csrf({cookie: true}) )
 
 
 //Conectar Mongo
-initConnections();
+//initConnections();
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/ecommerce', {
