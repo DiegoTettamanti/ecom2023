@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
 const mongoose = require ('mongoose')
 
-const collection = 'users';
+let collection = 'users';
 
 const Userschema = new Schema({
     nombre: {
@@ -29,5 +29,5 @@ const Userschema = new Schema({
 
 
 
-    module.exports = model('users', Userschema);
+    module.exports = model(collection, Userschema);
 

@@ -1,6 +1,6 @@
 import express from 'express';
-import { formularioLogin, formularioRegistro, olvidePassword, cerrarSesion, comprobarToken, nuevoPassword, eiliminarUsuario } from '../controlers/usuariocontroler.js';
-import usuariocontroler from '../controlers/usuariocontroler.js'
+import { formularioLogin, formularioRegistro, olvidePassword, cerrarSesion, comprobarToken, nuevoPassword, eiliminarUsuario } from '../controlers/usuarioController.js';
+import usuariocontroler from '../controlers/usuarioController.js'
 
 
 

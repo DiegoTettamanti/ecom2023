@@ -1,71 +1,71 @@
-// import fs from 'fs';
-// //import {arrayProducts} from '../products.json';
+import fs from 'fs';
+import {arrayProducts} from '../products.json';
 
 
 
 
-// const products = (req, res) => {
-//     res.render('auth/main', {
-//         autenticado: false  
-//     })
-//     const arrayProducts = products;
-//     const { idProduct } = req.params
-//     const product = products.find(product => product.id === idProduct)
-//     if(!product) return res.send("product not found")
-//     res.send(
-//         product
-//     )
-//     }
+const products = (req, res) => {
+    res.render('auth/main', {
+        autenticado: false  
+    })
+    const products = arrayProducts;
+    const { idProduct } = req.params
+    const product = products.find(product => product.id === idProduct)
+    if(!product) return res.send("product not found")
+    res.send(
+        product
+    )
+    }
 
     
-// //Class declaration
-// export class ProductManager {
-//     constructor(product){
-//     this.path = path
+//Class declaration
+export class ProductManager {
+    constructor(product){
+    this.path = path
  
     
-// }
-//     async getAll(){
-//             try {
-//                 const file = await fs.promises.readFile(this.path);
+}
+    async getAll(){
+            try {
+                const file = await fs.promises.readFile(this.path);
 
-//                 const archivoConvertido = JSON.parse(file)
-//                 const product = file
+                const archivoConvertido = JSON.parse(file)
+                const product = file
 
-//                  return archivoConvertido
+                 return archivoConvertido
 
-//             } catch (error) {
-//                     const array = [];
-//                     await fs.promises.writeFile(this.path, JSON.stringify(array))
-//                 return array
-//             }
-// }
+            } catch (error) {
+                    const array = [];
+                    await fs.promises.writeFile(this.path, JSON.stringify(array))
+                return array
+            }
+}
 
-//     async addProduct(objeto){
-//         try {
+    async addProduct(objeto){
+        try {
             
-//                 const elementos =  await this.getAll()
+                const elementos =  await this.getAll()
                 
-//                 const nuevoId   = elementos.lenght === 0 ? 0 : elementos[elementos.lenght -1]
+                const nuevoId   = elementos.lenght === 0 ? 0 : elementos[elementos.lenght -1]
                 
-//                  objeto.id = nuevoId;
-//                  objeto['id'] = nuevoId;
-//                 const nuevoObjeto = {...objeto, 'id': nuevoId};
+                 objeto.id = nuevoId;
+                 objeto['id'] = nuevoId;
+                const nuevoObjeto = {...objeto, 'id': nuevoId};
 
-//                 const elementosJson = JSON.stringify(nuevoObjeto, null, 4)
+                const elementosJson = JSON.stringify(nuevoObjeto, null, 4)
 
-//                 await fs.promises.writeFile(this.path, elementosJson)
+                await fs.promises.writeFile(this.path, elementosJson)
 
-//                 return nuevoId
+                return nuevoId
 
-//         } catch (error) {
-//             console.log(error)
-//             return error
-//         }
+        } catch (error) {
+            console.log(error)
+            return error
+        }
 
 
-//     }
-// }
+    }
+}
 
 
 
