@@ -111,7 +111,7 @@ const registrar = async (req, res) => {
     }
 
     // Extraer los datos
-    const { nombre, email, password } = req.body
+    const {nombre, email, password} = req.body
 
     // Verificar que el usuario no este duplicado
     const existeUsuario = await  Usuario.findOne({ where : { email }})
@@ -154,7 +154,7 @@ const registrar = async (req, res) => {
 // Función que comprueba una cuenta
 const confirmar = async (req, res) => {
     
-    const { token } = req.params;
+    const {token} = req.params;
 
     // Verificar si el token es válido
     const usuario = await Usuario.findOne({ where: {token}})
@@ -206,7 +206,7 @@ const resetPassword = async (req, res) => {
 
     // Buscar el usuario
 
-    const { email } = req.body
+    const {email} = req.body
 
     const usuario = await Usuario.findOne({ where: { email}} )
     if(!usuario) {
@@ -239,7 +239,7 @@ const resetPassword = async (req, res) => {
 
 const comprobarToken = async (req, res) => {
 
-    const { token } = req.params;
+    const {token} = req.params;
 
     const usuario = await Usuario.findOne({where: {token}})
     if(!usuario) {
