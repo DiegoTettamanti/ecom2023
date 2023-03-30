@@ -1,11 +1,15 @@
 import express from 'express';
 import { formularioLogin, formularioRegistro, cerrarSesion, comprobarToken, nuevoPassword } from '../controlers/usuarioController.js';
 import { passportAuth} from '../middleware/passportAuth';
+import {userSchema} from '../models/userSchema';
+
 const router = express.Router();
 
 router.get('/', passportAuth, async (req, res) => {
     const {page=1} = req.query;
-    const {docs} = await User
+    const {docs} = await userSchema.paginate({}, {limit: 2,page})
+
+    res.status(200).send(docs)
 });
 
 
