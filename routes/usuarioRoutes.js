@@ -5,7 +5,7 @@ import {userSchema} from '../models/userSchema';
 
 const router = express.Router();
 
-router.get('/', passportAuth, async (req, res) => {
+router.get('/', passportAuth('jwt'), async (req, res) => {
     const {page=1} = req.query;
     const {docs} = await userSchema.paginate({}, {limit: 2,page})
 
