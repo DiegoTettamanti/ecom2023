@@ -1,7 +1,13 @@
 import express from 'express';
 import { formularioLogin, formularioRegistro, cerrarSesion, comprobarToken, nuevoPassword } from '../controlers/usuarioController.js';
-
+import { passportAuth} from '../middleware/passportAuth';
 const router = express.Router();
+
+router.get('/', passportAuth, async (req, res) => {
+    const {page=1} = req.query;
+    const {docs} = await User
+});
+
 
 router.get('/login', formularioLogin );
 
