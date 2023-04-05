@@ -21,8 +21,24 @@ const Userschema = new Schema({
         unique: true,
         lowercase: true,
         trim: true
+    },
+    age: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+    password: {
+        type: Password,
+        required: true
+    },
+    cart: {
+        type: String,
+    },
+    role: {
+        type: String,
+        required: true
     }
-    })
+})
 
 
 
