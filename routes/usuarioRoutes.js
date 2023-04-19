@@ -1,7 +1,7 @@
 import express from 'express';
 import { formularioLogin, formularioRegistro, cerrarSesion, comprobarToken, nuevoPassword } from '../controlers/usuarioController.js';
-import { passportAuth} from '../middleware/passportAuth';
-import {userSchema} from '../models/userSchema';
+import { passportAuth} from '../middleware/passportAuth.js';
+import {userSchema} from '../models/Users.js';
 
 const router = express.Router();
 
