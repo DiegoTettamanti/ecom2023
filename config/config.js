@@ -13,10 +13,11 @@ dotenv.config({
 })
 
 // const url = "mongodb+srv://Tettacorp:Fullstack23@cluster17.63yiu.mongodb.net"
-const url = process.env.MONGO_URL || 'mongodb://localhost:27017/ecom2023'
+const url = process.env.MONGO_URL 
+
 
 let configObject = {
-    PORT: process.env.PORT || 8000,
+    PORT: process.env.PORT,
     MONGO_URL: url,
     adminName: process.env.ADMIN_NAME || 'admin',
     adminPassword: process.env.ADMIN_PASSWORD || 'admin',
