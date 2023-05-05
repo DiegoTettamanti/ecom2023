@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser'
 
 import usuarioRoutes from '../src/routes/usuarioRoutes.js'; 
 import mongoose from 'mongoose';
-import passport, { session } from 'passport';
+import passport from 'passport';
 
 //Crear la App
 const app = express();
@@ -44,7 +44,7 @@ app.use(express.static('public'));
 
 //Routing
 app.use('/auth', usuarioRoutes)
-app.get('/:pid', productsRoutes)
+// app.get('/:pid', productsRoutes)
 
 
 

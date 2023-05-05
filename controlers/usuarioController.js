@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
-import Users from '../models/Users.js'
 
 import { check, validationResult } from 'express-validator'
 import bcrypt from 'bcrypt'
-import Usuario from '../models/Users.js'
-import { generarJWT, generarId } from '../helpers/tokens.js'
+import { generarJWT, generarId} from '../helpers/tokens.js'
 
 
 const formularioLogin = (req, res) => {
@@ -31,10 +29,10 @@ const autenticar = async (req, res) => {
         })
     }
 
-    const { email, password} = req.body
+    const {email, password} = req.body
 
     // Comprobar si el usuario existe
-    const usuario = await Usuario.findOne({ where: { email }})
+    const usuario = await usuario.findOne({ where: { email }})
     if(!usuario) {
         return res.render('auth/login', {
             pagina: 'Iniciar Sesión',
@@ -114,7 +112,7 @@ const registrar = async (req, res) => {
     const {nombre, email, password} = req.body
 
     // Verificar que el usuario no este duplicado
-    const existeUsuario = await  Usuario.findOne({ where : { email }})
+    const existeUsuario = await  usuario.findOne({ where : { email }})
     if(existeUsuario) {
         return res.render('auth/registro', {
             pagina: 'Crear Cuenta',
@@ -129,7 +127,7 @@ const registrar = async (req, res) => {
 
 
     // Almacenar un usuario
-    const usuario = await Usuario.create({
+    const usuario = await usuario.create({
         nombre, 
         email,
         password,
@@ -157,7 +155,7 @@ const confirmar = async (req, res) => {
     const {token} = req.params;
 
     // Verificar si el token es válido
-    const usuario = await Usuario.findOne({ where: {token}})
+    const usuario = await usuario.findOne({ where: {token}})
 
     if(!usuario) {
         return res.render('auth/confirmar-cuenta', {
@@ -208,7 +206,7 @@ const resetPassword = async (req, res) => {
 
     const {email} = req.body
 
-    const usuario = await Usuario.findOne({ where: { email}} )
+    const usuario = await usuario.findOne({ where: { email}} )
     if(!usuario) {
         return res.render('auth/olvide-password', {
             pagina: 'Recupera tu acceso a ecommerce',
@@ -241,7 +239,7 @@ const comprobarToken = async (req, res) => {
 
     const {token} = req.params;
 
-    const usuario = await Usuario.findOne({where: {token}})
+    const usuario = await usuario.findOne({where: {token}})
     if(!usuario) {
         return res.render('auth/confirmar-cuenta', {
             pagina: 'Reestablece tu Password',
@@ -274,10 +272,10 @@ const nuevoPassword = async (req, res) => {
     }
 
     const { token } = req.params
-    const { password } = req.body;
+    const { password } = req.body;
 
     // Identificar quien hace el cambio
-    const usuario = await Usuario.findOne({where: {token}})
+    const usuario = await usuario.findOne({where: {token}})
     
     // Hashear el nuevo password
     const salt = await bcrypt.genSalt(10)
@@ -303,5 +301,6 @@ export {
     formularioOlvidePassword,
     resetPassword,
     comprobarToken,
-    nuevoPassword
+    nuevoPassword,
+   
 }

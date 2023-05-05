@@ -1,9 +1,10 @@
-import { Schema, model } from 'mongoose'
 import mongoose from 'mongoose'
+import { Schema, model } from 'mongoose'
 
-let collection = 'users';
 
-const Userschema = new Schema({
+const usuario  = 'collection';
+
+const userSchema = new Schema({
     nombre: {
         type: String,
         required: true,
@@ -27,10 +28,6 @@ const Userschema = new Schema({
         required: true,
         trim: true
     },
-    password: {
-        type: Password,
-        required: true
-    },
     cart: {
         type: String,
     },
@@ -41,8 +38,4 @@ const Userschema = new Schema({
 })
 
 
-
-
-
-
-   export default {collection, Userschema}
+   export default { usuario, userSchema};
