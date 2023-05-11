@@ -22,32 +22,32 @@ let configObject = {
     adminName: process.env.ADMIN_NAME || 'admin',
     adminPassword: process.env.ADMIN_PASSWORD || 'admin',
     
-    // dbConnection:  async () => {
-    //     try {
-    //         await connect(url)
-    //         console.log('DB conectada')  
-    //     } catch (error) {
-    //         console.log(error)
-    //         process.exit()
-    //     }        
-    // },
-    dbConnection: () => MongoSingleton.getInstance(),
-    session: {
-        store: MongoStore.create({
-            mongoUrl: url,
-            mongoOptions: {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-            },
-            ttl: 15000000000
-        }), 
-        secret: 's3cr3t0',
-        resave: false,
-        saveUninitialized: false,
-    }
-}
+    dbConnection:  async () => {
+        try {
+            await connect(url)
+            console.log('DB conectada')  
+        } catch (error) {
+            console.log(error)
+            process.exit()
+        }        
+    }}
+//     dbConnection: () => MongoSingleton.getInstance(),
+//     session: {
+//         store: MongoStore.create({
+//             mongoUrl: url,
+//             mongoOptions: {
+//                 useNewUrlParser: true,
+//                 useUnifiedTopology: true,
+//             },
+//             ttl: 15000000000
+//         }), 
+//         secret: 's3cr3t0',
+//         resave: false,
+//         saveUninitialized: false,
+//     }
+// }
 
 
-export {
+export default {
     configObject  
 }

@@ -5,12 +5,13 @@ import cookieParser from 'cookie-parser'
 import usuarioRoutes from '../src/routes/usuarioRoutes.js'; 
 import mongoose from 'mongoose';
 import passport from 'passport';
+import addLogger from ('./middleware/logger.js')
 
 //Crear la App
 const app = express();
 app.use(express.urlencoded({ extended: true }))
 //app.use(session(objectConfig.session));
-
+app.use(addLogger)
 app.use(passport.initialize());
 app.use(express.json());    
 app.use(express.urlencoded({ extended: true }))
@@ -28,11 +29,6 @@ app.use( csrf({cookie: true}) )
 //Conectar Mongo
 //initConnections();
 
-mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/ecommerce', {
-    useNewUrlParser: true
-
-})
 
 
 //Habilitar Pug
