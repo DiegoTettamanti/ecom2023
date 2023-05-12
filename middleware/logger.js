@@ -14,4 +14,4 @@ exports.addLogger = (req, res, next) => {
 }
 
 
-export default addLogger
+export default logger

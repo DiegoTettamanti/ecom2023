@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser'
 import usuarioRoutes from '../src/routes/usuarioRoutes.js'; 
 import mongoose from 'mongoose';
 import passport from 'passport';
-import addLogger from '..src/middleware/logger.js'
+import addLogger from '../src/middleware/logger.js';
+
 
 //Crear la App
 const app = express();
