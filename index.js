@@ -36,6 +36,7 @@ app.use( csrf({cookie: true}) )
 app.set('view engine', 'pug');
 app.set('views',  '../views');
 
+
 app.use(addLogger)
 //Carpeta Public
 app.use(express.static('public'));
