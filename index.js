@@ -8,6 +8,8 @@ import passport from 'passport';
 import addLogger from '../src/middleware/logger.js';
 
 
+
+
 //Crear la App
 const app = express();
 app.use(express.urlencoded({ extended: true }))
@@ -29,7 +31,7 @@ app.use( csrf({cookie: true}) )
 
 //Conectar Mongo
 //initConnections();
-
+//dbConnection();
 
 
 //Habilitar Pug

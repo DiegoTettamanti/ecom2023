@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 
 import { check, validationResult } from 'express-validator'
 import bcrypt from 'bcrypt'
