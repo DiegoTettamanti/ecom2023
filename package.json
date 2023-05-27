@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:dev": "nodemon index.js --mode development" ,
+    "start:dev": "nodemon index.js --mode development",
     "start": "node index.js --mode production",
     "server": "nodemon index.js",
     "css": "postcss public/css/tailwind.css -o public/css/app.css --watch"
@@ -30,7 +30,7 @@
     "mongoose": "^6.10.5",
     "mongoose-paginate-v2": "^1.7.1",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.1",
+    "nodemailer": "^6.9.2",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "pug": "^3.0.2",
