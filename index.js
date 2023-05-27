@@ -6,6 +6,8 @@ import usuarioRoutes from '../src/routes/usuarioRoutes.js';
 import mongoose from 'mongoose';
 import passport from 'passport';
 import addLogger from '../src/middleware/logger.js';
+import {port, dbConnection} from './config/config.js';
+
 
 
 

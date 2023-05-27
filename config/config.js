@@ -23,6 +23,8 @@ let configObject = {
     MONGO_URL: url,
     adminName: process.env.ADMIN_NAME || 'admin',
     adminPassword: process.env.ADMIN_PASSWORD || 'admin',
+    mail_password: process.env.MAIL_PASSWORD,
+    mail_admin: 'tettamanti.diego@gmail.com',
     
     _dbConnection: async () => {
         try {
