@@ -7,7 +7,7 @@ import passport from 'passport';
 import addLogger from '../src/middleware/logger.js';
 import {port} from './config/config.js';
 import swaggerJSDoc from 'swagger-jsdoc';
-import swaggerUiexpress from 'swagger-ui-express;
+import swaggerUiexpress from 'swagger-ui-express';
 
 
 
