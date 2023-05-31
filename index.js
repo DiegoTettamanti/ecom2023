@@ -64,7 +64,7 @@ apis: [`${__dirname}/docs/**/*.yaml`]
 const specs = swaggerJSDoc(swaggerOptions);
 
 //Routing de Docs
-app.use('apidocs', swaggerUiexpress.serve, swaggerUiexpress.setup(specs));
+app.use('/apidocs', swaggerUiexpress.serve, swaggerUiexpress.setup(specs));
 
 
 
