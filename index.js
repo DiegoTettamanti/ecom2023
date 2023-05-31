@@ -3,12 +3,11 @@ import csrf from 'csurf'
 import cookieParser from 'cookie-parser'
 
 import usuarioRoutes from '../src/routes/usuarioRoutes.js'; 
-import mongoose from 'mongoose';
 import passport from 'passport';
 import addLogger from '../src/middleware/logger.js';
-import {port, dbConnection} from './config/config.js';
-
-
+import {port} from './config/config.js';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUiexpress from 'swagger-ui-express;
 
 
 
@@ -48,6 +47,24 @@ app.use(express.static('public'));
 //Routing
 app.use('/auth', usuarioRoutes)
 // app.get('/:pid', productsRoutes)
+
+const swaggerOptions = {
+    definitions: {
+        openApi: '3.0.1',
+        info: {
+            title:'Documentacion de Ecom23',
+            description: 'Api pensada para el comercio electronico'
+        
+        }
+
+},
+apis: [`${__dirname}/docs/**/*.yaml`]
+}
+
+const specs = swaggerJSDoc(swaggerOptions);
+
+//Routing de Docs
+app.use('apidocs', swaggerUiexpress.serve, swaggerUiexpress.setup(specs));
 
 
 

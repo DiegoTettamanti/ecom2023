@@ -11,8 +11,11 @@ const transport = createTransport({
 }})
 let from = `servicio de reset password <${mail_admin}>`
 
-const sendEmail = async () => {
-    return await transport.sendEmail(
-        from
-    )
+const sendEmail = async (userMail,subject,html) => {
+    return await transport.sendEmail({
+        from,
+        to: userMail.email,
+        subject,
+        html,
+})
 }
