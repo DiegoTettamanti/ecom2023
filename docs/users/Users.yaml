@@ -1,0 +1,11 @@
+paths: 
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios
+      tags: 
+        - Users
+      responses:
+        "200 OK":
+          description: Los usuarios fueron agregados correctamente.
+        "500 Internal Server Error":
+          description: error interno del servidor, Query defectuosa o fallo en la base de datos.

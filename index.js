@@ -69,7 +69,7 @@ app.use('/apidocs', swaggerUiexpress.serve, swaggerUiexpress.setup(specs));
 
 
 //Definir un puerto y arrancar el proyecto
-const port = 8080;
+//const port = 8080;
 
 app.listen(port, () => {
     console.log(`El servidor esta funcionando en el puerto' ${port}`);

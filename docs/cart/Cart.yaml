@@ -1,0 +1,41 @@
+paths: 
+  /api/cart/:
+    get:
+      summary: Obtiene todos los carritos de compras
+      tags: 
+        - Carts
+      responses:
+        "200 OK":
+          description: Los carritos fueron agregados correctamente.
+        "500 Internal Server Error":
+          description: error interno del servidor, Query defectuosa o fallo en la base de datos.
+
+components:
+  schemas:
+    User:
+      type: object
+      properties: 
+        _id:
+          type: string
+          description: _id of the db Mongo
+        first_name:
+          type: string
+          description: first name of the User
+        last_name:
+          type: string
+          description: last name of the User
+        email:
+          type: string
+          description: email of the User
+        password:
+          type: string
+          description: password of the User
+
+      example: 
+        _id: objectId("ckjhkbewkenfvxoixdn")
+        first_name: Diego
+        last_name: Tettamanti
+        email: tettamanti.diego@gmail.com
+        password: $lhfkshgfksjhjemnvortpwgk
+
+
