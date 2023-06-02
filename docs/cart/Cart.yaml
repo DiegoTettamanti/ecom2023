@@ -7,6 +7,12 @@ paths:
       responses:
         "200 OK":
           description: Los carritos fueron agregados correctamente.
+          content:
+            aplications/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/component/shemas/User'  
         "500 Internal Server Error":
           description: error interno del servidor, Query defectuosa o fallo en la base de datos.
 
@@ -37,5 +43,8 @@ components:
         last_name: Tettamanti
         email: tettamanti.diego@gmail.com
         password: $lhfkshgfksjhjemnvortpwgk
+
+requestBodies:
+  updateUser
 
 
